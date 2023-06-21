@@ -1,0 +1,52 @@
+{
+  "login" : {
+    "username": "admin" ,
+    "password": "password123"
+  },
+
+  "status": {
+    "code200" : 200,
+    "code404" : 404,
+    "code201" : 201
+  },
+
+  "response": {
+    "delete": "Created"
+  },
+
+
+  "input": {
+    "data": [
+      {
+        "firstname": "James",
+        "lastname": "Brown",
+        "totalprice": "111",
+        "depositpaid": "true",
+        "bookingdates": {
+          "checkin": "2018-01-01",
+          "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+      },
+      {
+        "firstname": "Jim",
+        "lastname": "Brown",
+        "totalprice": "111",
+        "depositpaid": "true",
+        "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Breakfast"
+      }
+    ]
+
+  },
+  "patchdata":
+    {
+      "firstname": "Graham",
+      "lastname": "Brown"
+      }
+    }
+
+

@@ -1,0 +1,42 @@
+<testsuite failures="0" name="com.heroku.features/heroku_post.feature" skipped="0" tests="2" time="6.502979">
+  <testcase classname="com.heroku.features.heroku_post" name="create a new auth token to use for access to the PUT and DELETE" time="1.235989">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+* header Content-Type = 'application/json' ................................ passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+And path '/auth' .......................................................... passed
+Given def value = login ................................................... passed
+And request value ......................................................... passed
+And method POST ........................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { token:"#string" } .................................. passed
+Then assert responseStatus == 200 ......................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.heroku.features.heroku_post" name="create a new booking" time="5.26699">
+    <system-out>* url 'https://restful-booker.herokuapp.com' .............................. passed
+* header Content-Type = 'application/json' ................................ passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+And path '/auth' .......................................................... passed
+Given def value = login ................................................... passed
+And request value ......................................................... passed
+And method POST ........................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { token:"#string" } .................................. passed
+Then assert responseStatus == 200 ......................................... passed
+* url 'https://restful-booker.herokuapp.com' .............................. passed
+* header Content-Type = 'application/json' ................................ passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+And path '/booking' ....................................................... passed
+And print  input.data[1] .................................................. passed
+Given def value = input.data[1] ........................................... passed
+And request value ......................................................... passed
+And method POST ........................................................... passed
+And print response ........................................................ passed
+When status 200 ........................................................... passed
+Then assert responseStatus == 200 ......................................... passed
+* def getbookingid = response.bookingid ................................... passed
+* def createResponse = call read('heroku_put.feature') {'bookingid' : '#(getbookingid)'} . passed</system-out>
+  </testcase>
+</testsuite>

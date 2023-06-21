@@ -1,0 +1,68 @@
+<testsuite failures="0" name="com.heroku.features/heroku_get.feature" skipped="0" tests="3" time="4.732796">
+  <testcase classname="com.heroku.features.heroku_get" name="verify response with all booking id" time="2.299742">
+    <system-out>* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { bookingid:"#number" } .............................. passed
+Then assert responseStatus == 200 ......................................... passed
+* def bookingid = response.bookingid ...................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.heroku.features.heroku_get" name="verify response for specific booking id" time="1.216423">
+    <system-out>* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { bookingid:"#number" } .............................. passed
+Then assert responseStatus == 200 ......................................... passed
+* def bookingid = response.bookingid ...................................... passed
+* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given path '/1' ........................................................... passed
+When method get ........................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { firstname:"#string" } .............................. passed
+And match $ contains { lastname:"#string" } ............................... passed
+And match $ contains { totalprice:"#number" } ............................. passed
+And match $ contains { depositpaid:"#boolean" } ........................... passed
+And match $ contains { bookingdates:"#object" } ........................... passed
+* def date = new java.text.SimpleDateFormat("MM-dd-yyyy") ................. passed
+* def expected = { checkin:"#notnull",checkout: "#notnull"} ............... passed
+And match $ contains { bookingdates:'#(^^expected)'} ...................... passed
+Then assert responseStatus == 200 ......................................... passed</system-out>
+  </testcase>
+  <testcase classname="com.heroku.features.heroku_get" name="verify response for specific booking id" time="1.216631">
+    <system-out>* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { bookingid:"#number" } .............................. passed
+Then assert responseStatus == 200 ......................................... passed
+* def bookingid = response.bookingid ...................................... passed
+* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given path '/1' ........................................................... passed
+When method get ........................................................... passed
+When status 200 ........................................................... passed
+And match $ contains { firstname:"#string" } .............................. passed
+And match $ contains { lastname:"#string" } ............................... passed
+And match $ contains { totalprice:"#number" } ............................. passed
+And match $ contains { depositpaid:"#boolean" } ........................... passed
+And match $ contains { bookingdates:"#object" } ........................... passed
+* def date = new java.text.SimpleDateFormat("MM-dd-yyyy") ................. passed
+* def expected = { checkin:"#notnull",checkout: "#notnull"} ............... passed
+And match $ contains { bookingdates:'#(^^expected)'} ...................... passed
+Then assert responseStatus == 200 ......................................... passed
+* url 'https://restful-booker.herokuapp.com/booking' ...................... passed
+* header Accept = 'application/json' ...................................... passed
+* call read ('classpath:src/test/resources/TestData/data.json') ........... passed
+Given path '/1' ........................................................... passed
+When method get ........................................................... passed
+When status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>
