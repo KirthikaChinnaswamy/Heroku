@@ -7,7 +7,7 @@ Heroku API is automated using Karate Framework. Karate is the only open-source t
 To setup API, follow the steps here -> https://restful-booker.herokuapp.com/apidoc/index.html
 
 To setup the Automation framework, install below items -
- - Eclipse
+ - Eclipse/IntelliJ
 - Testng & Maven plugin in Eclipse
 - Create tests in feature files with tags declared
 - Set the feature file name and the tag to execute in TestRunner.java and run it as TestNG Test
@@ -26,16 +26,10 @@ To setup the Automation framework, install below items -
  This folder contains the test data in json format
 
 ****
- 
-**Video Recording**
-
-Available in the following path -> https://github.com/KirthikaChinnaswamy/Heroku/blob/main/VideoRecording_APIAutomation.mov.zip
-
-****
 
 **Scenarios Automated**
 
-Automated Services API from Best Buy covering below scenarios - 
+Automated Services API from Heroku covering below scenarios - 
 - Hit url and verify response
 - Pass ID and verify name in response and vice versa
 - Verified Get, Put, Patch, Post and Delete api's
